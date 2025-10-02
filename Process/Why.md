@@ -1,5 +1,6 @@
 # Intentions
 The aim of my participation in Materializing Design is three-fold:
+
 1- To develop a game prototype as a method to enter the game making "domain" and evolve various relevant skills in space that encourages analysis, reflection, and iterations.
 
 2- To approach game-making from a design and authorship perspectives, championing process and methods over an product-oriented enclosed path.
