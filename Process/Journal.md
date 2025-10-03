@@ -115,6 +115,10 @@ I have sunk into a world of algorithms and generative content, I don't want the 
 I need to find a tool(s) and method(s) to efficiently build and test labyrinth designs that reflect investigated representations of moral parsimony.
 How did I not consider to simply use pen and paper?
 
+This is a very cool tool to test different shapes of top-down  2D mazes, with control over building algorithm, randomness, complexity, shape, and solves: https://codebox.net/pages/maze-generator/online 
+
+I could potentially use this as a general guide and meditation over traversing a puzzle world (and enjoy playing a maze or two).
+
 ## Self log \# 4
 
 ### 03/10/2025
