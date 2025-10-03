@@ -106,6 +106,8 @@ Why separate the narrative and the technical? Why not make them one and the same
 
 I have sunk into a world of algorithms and generative content, I don't want the game to lose the plot and revel in its own complexity. I do not want the game to lean into a purely skill-oriented labyrinth solver. I want the world to reflect the process of moral engagement with a situation/dilemma; where the active navigation and traversal within that world simulated such thought process. Is that too complicated? How can it be simpler?
 
+**QUICK THOUGHT** Maze-like levels with multiple ways of navigating it to reach multiple eventualities. There are ways to "cheat" or break the rigid structure of the maze to traverse faster or collect more (collectibles?) at the cost of being scored less because you didn't commit to winning through the structure and rules of the maze. This is a very simplistic view of moral parsimony, except the winning and losing are not really a thing in moral parsimony since it is a very subjective concept. I try to represent the absence of right/wrong choice here with respect to the preference to collect more and score less, or collect less and score more. But separating score evaluation from collectibles, and punishing creative or efficient traversal of a maze does not represent my intentions. I need more balanced incentives, and I need to represent the subjectivity of moral approaches better.
+
 ## Tools log \# 4
 
 ### 03/10/2025
