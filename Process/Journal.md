@@ -97,3 +97,26 @@ I target a sense of social authority via being a detective because it gives me t
 I target dark and gritty setting because I do not think I can synthesize light worlds or scenarios, my mind is consumed by melodramatic interpretations of lived experiences. I think I derive my sense of agency and creativity from a dark place.
 
 I think I need to go simpler, go for fun but also thoughtful, simple but nuanced. I need to clear a lot of clutter.
+
+## Idea log \# 4
+
+### 03/10/2025
+
+Why separate the narrative and the technical? Why not make them one and the same! Instead of the complexity and nuances of detective stories and role-playing, maybe the path is to visualize moral parsimony as a puzzle/labyrinth/strategy exchange between the player and the world. This will require some bbrief research into visualizing abstracts and puzzle-making, but I currently think that this format is the best vessel to hit both of my targets into an experience.
+
+I have sunk into a world of algorithms and generative content, I don't want the game to lose the plot and revel in its own complexity. I do not want the game to lean into a purely skill-oriented labyrinth solver. I want the world to reflect the process of moral engagement with a situation/dilemma; where the active navigation and traversal within that world simulated such thought process. Is that too complicated? How can it be simpler?
+
+## Tools log \# 4
+
+### 03/10/2025
+
+I need to find a tool(s) and method(s) to efficiently build and test labyrinth designs that reflect investigated representations of moral parsimony.
+How did I not consider to simply use pen and paper?
+
+## Self log \# 4
+
+### 03/10/2025
+
+I think I understand Jonathan lessard's discussion with me when he understood my tendency to want to involve storytelling and separate it from the technical process due to my background in screen media with affinities to film. Merging the form and ethos into a unified experience is something I am excited about, but I fear the complex mathematical and computational avenues I am opening by entertaining the pozzibility of mazes/labyrinths. I always tend to solve a complexity with another, trading one poison for another.
+
+I think I can simplify my idea further, maybe I need to stand back and think like a player for a moment. Quantic Foundry's _Game Motivation Model_ provides some insight into why a poetic puzzle game can be inticing to play, but it has to balance the poetry with skill-mastery to achieve my intentions (or maybe it will turn out that my intention will face a change?).
