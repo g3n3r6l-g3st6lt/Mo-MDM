@@ -1,1 +1,1 @@
-
+The aim of this section is documenting random experiments and engagements that do not necessarily require a visual accompaniment in real-time. This way I avoid the risk of elements of hindsight self-editing or retroactive sanitizing of content which defeats the purpose of documenting these experiments.
