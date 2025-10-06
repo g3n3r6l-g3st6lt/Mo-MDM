@@ -126,3 +126,31 @@ I could potentially use this as a general guide and meditation over traversing a
 I think I understand Jonathan lessard's discussion with me when he understood my tendency to want to involve storytelling and separate it from the technical process due to my background in screen media with affinities to film. Merging the form and ethos into a unified experience is something I am excited about, but I fear the complex mathematical and computational avenues I am opening by entertaining the pozzibility of mazes/labyrinths. I always tend to solve a complexity with another, trading one poison for another.
 
 I think I can simplify my idea further, maybe I need to stand back and think like a player for a moment. Quantic Foundry's _Game Motivation Model_ provides some insight into why a poetic puzzle game can be inticing to play, but it has to balance the poetry with skill-mastery to achieve my intentions (or maybe it will turn out that my intention will face a change?).
+
+## Idea log \# 5
+
+### 05/10/2025
+
+I am still conducting research about visualizing abstracts, maze-building, and gamifiying dilemmas (see /Bibliography section in /Process). My intention is to find symbolic methods that can still represent my intentions without making it too complex, pretentious, or veer from its path as a small game.
+
+I am trying to consolidate the nuances of moral judgement into simple active decisions, which isn't necessarily the most reflective of the depth of moral parsimony, but I have no obligation to be objective or holistic. I HAVE to separate between data I acquire through research, and what gets distilled into output. So I intend to make collectibles, make some parts of the mazes destructible; I hope these mechanics allow for active decision-making which reveals metaphorically moral decisions. Again, this is an over-simplification of moral nuances, but the game "explores" a world-building analogy, it does not provide a dissertation on moral frameworks.
+
+## Tools log \# 5
+
+### 05/10/2025
+
+I have started to produce some basic character art and animation, and it feels great to create! The intention of this current iteration of character creation is to use my own likeness to produce a simple character with 3 basic animations: walking, acquiring collectible/consumable, and an attack. (the game won't need many character animations). I am exploring two workflows: The first depends greatly on gen-AI via asset creation and animation on *Pixel Lab*; it so far requires a lot of manual refinement and iterations to get consistent results. It is also limited to pixel-art (it's in the name), which I do not mind since this is the artstyle I am going with. The second mostly manual through modelling and texturing a 3D, lowpoly character following this visualization: https://tohawork.com/en/zeromodelling using Blender, then *Mixamo* for base animations.
+
+The reason why I am using *Blender* and not creating my manual character directly in 2D pixel style on another software boils down to my technical skill and efficiency.
+
+(see /Art section in /Process for game art updates).
+
+## Self log \# 5
+
+### 06/10/2025
+
+I have not discussed the past couple of updates with Jonathan yet, but I do think I need to focus and commit to a certain path for a bit to discuss its merits with a form of experimental experience.
+
+I feel good creating some "product" beyond reflections and readings; I measure progress in creation and not in the accumalated knowledge I am acquiring. However, I feel that I am pushing the time of executing a build as much as possible because I fear the technical elements of this process that I am new to, I fear that the game may end up being empty, phony and a waste of digital signature.
+
+I need to push myself to dive into this sense of failure and work on my process through it. Fear stems from the unknown, and if I know there will be failures, then why fear failure?
