@@ -1,5 +1,7 @@
 # Audiovisual Journal – October 7, 2025
 
+### Video: https://www.youtube.com/watch?v=S21RdSBYkvM
+
 Another audiovisual journal. The date today is October 7th, 2025. It’s 11:38 a.m., and it is a Tuesday.
 
 Because I did not document the process of using pixel art to create my character, what I will do now is go through the same process creating a new character. This is to show the steps I take, and also to understand how the generative AI aspect of Pixel Lab makes the workflow of creating pixel art assets for game characters quite simple.
