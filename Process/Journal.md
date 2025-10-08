@@ -154,3 +154,31 @@ I have not discussed the past couple of updates with Jonathan yet, but I do thin
 I feel good creating some "product" beyond reflections and readings; I measure progress in creation and not in the accumalated knowledge I am acquiring. However, I feel that I am pushing the time of executing a build as much as possible because I fear the technical elements of this process that I am new to, I fear that the game may end up being empty, phony and a waste of digital signature.
 
 I need to push myself to dive into this sense of failure and work on my process through it. Fear stems from the unknown, and if I know there will be failures, then why fear failure?
+
+## Idea log \# 6
+
+### 08/10/2025
+
+I am adamant on following the maze-runner format now for a full test-run (pun not intended). I find there is potential in its concept, mechanics, and replayability. However, there are some questions I must negotiate with to refine the experience. Part of these negotiations can be made significantly simpler and fruitful through player-testing, hence the need to commit to a build. These questions include: 
+
+**(1)** What is the driving action to engage with the game? (hook)
+
+**(2)** What does the player have to give from their personal experience, skill, and identity? (cost)
+
+**(3)** What form of gratification, knowledge, or promise does the game hold upon experiencing and/or completion? (reward)
+
+**(4)** In the more specific case of exploring moral parsimony through a maze that may have different escapes and different routes/methods of traversal, how can the player be enticed to make an active choice among them or to consider the different outcomes without a constant obvious standout?
+
+I need to read more into mazes and game logic.
+
+## Tools log \# 6
+
+### 08/10/2025
+
+Pixel Lab is amazing for my character creation and animation, but God is it absolutely painful in how many iterations it takes for some specific orientations to be consistent with others. So it produces characters almost perfect to their prompts, and its catalogue of animations are adequately inclusive, but the way it translates an animation to the character loses its reliability relative to the direction of the animation render. The incosistency manifests in the form of jumbled anatomy, addition or omission of character's visual details, and/or movement speed and range being inconsistent with the other directions/orientations for the same movement. This results in the need to repeat the generation tens of times for one (or more) orientation so it matches the rest. The main issue is that all 8 directions/orientations have to be consistent for the animation to be usable, one wrong/flawed orientation renders the whole animation useless.
+
+## Self log \# 6
+
+### 08/10/2025
+
+Engaging with both ideation and making simultaneously is fun and efficient, but very draining. I feel I am actually being "productive", albeit for short bursts rather than a slow-burn. I have made peace with how I view my productivity and valuation of a process' quaity. I am restless and want to produce any semblance of a level build to assure Jonathan I am actually doing some work and not just faffing about. I am starting to appreciate ideation simplicity and narrowing down grand, explosive concepts for thoughtful and refined ones. I like audiovisual journaling, and I think I will engage with it more as I "produce" more.
