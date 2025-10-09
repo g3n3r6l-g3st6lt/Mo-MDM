@@ -182,3 +182,15 @@ Pixel Lab is amazing for my character creation and animation, but God is it abso
 ### 08/10/2025
 
 Engaging with both ideation and making simultaneously is fun and efficient, but very draining. I feel I am actually being "productive", albeit for short bursts rather than a slow-burn. I have made peace with how I view my productivity and valuation of a process' quaity. I am restless and want to produce any semblance of a level build to assure Jonathan I am actually doing some work and not just faffing about. I am starting to appreciate ideation simplicity and narrowing down grand, explosive concepts for thoughtful and refined ones. I like audiovisual journaling, and I think I will engage with it more as I "produce" more.
+
+## Idea log \# 7
+
+### 09/10/2025
+
+I have been exploring visual representation and art style as I am testing my character creation flow via Pixel Lab, and it occured to me, how about going a step further in the metaphor of abstracts, illusions, paradoxes and identity through choosing René Magritte's "Son of Man" to be the playable character. The identity of the character is irrelevant, the character has an iconic look which adds some intrigue and appeal, and what he represents being hidden by the visible while from his perspective the visible also blinds him. To challenge visual certainty and treachery of images plays into the moral ambiguity, relativity, and parsimony. Will investigate further in tools.
+
+## Tools log \# 7
+
+### 09/10/2025
+
+The consistency issue arises again in Pixel Lab, however, now I have a character with distinct features and a visual reference to derive it from. Which will make my alternative manual flow via Blender significantly easier and modular (apple, overcoat, bowling hatm etc). I am almost complete with an 8-direction walking cycle for a first iteration of Son of Man (SOM) character (will post in /Process/Art). The next step would be to import the sprites into Unreal Engine and using Paper2D/ZD plugin to sort out sprite allocation and movement controls (will post experiment in /Process/Audiovisual_Journal).
