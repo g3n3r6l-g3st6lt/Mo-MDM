@@ -194,3 +194,25 @@ I have been exploring visual representation and art style as I am testing my cha
 ### 09/10/2025
 
 The consistency issue arises again in Pixel Lab, however, now I have a character with distinct features and a visual reference to derive it from. Which will make my alternative manual flow via Blender significantly easier and modular (apple, overcoat, bowling hatm etc). I am almost complete with an 8-direction walking cycle for a first iteration of Son of Man (SOM) character (will post in /Process/Art). The next step would be to import the sprites into Unreal Engine and using Paper2D/ZD plugin to sort out sprite allocation and movement controls (will post experiment in /Process/Audiovisual_Diary).
+
+## Self log \# 7
+
+### 10/10/2025
+
+The process of character consistency and refinement on Pixel Lab was draining, and as I was going through this limbo I mocked myself for feeling defeated even when I am not really putting any of my skills to a test. How defeating is boiling the situation down to feeling despair because I erase a pixel here or there, or pressing redo with slightly different sliders. However, today is a new day, I have the two test animations i want, time to move on.
+
+I want to create something interactive soon or I will feel useless, this is the part in the process curve where I deicde to delete everything, bunch of assets/renders that can look good on social media but nothing else. This time, I won't settle for this.
+
+## Idea log \# 8
+
+### 10/10/2025
+
+I will use the maze generator from CodeBox as a template to generate a Blender python code to generate it in blocks (blocking). I can then test the maze logic and general look. I may move the maze to unreal and test it with the character.
+
+## Tools log \# 8
+
+### 10/10/2025
+
+I intend to screen record the process of using Paper2D/ZD plugin on UE to assign my character sprites to movement controls and testing the result, and also generating the maze blocking after playing a couple of them on maze generator.
+
+
