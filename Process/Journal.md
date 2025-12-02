@@ -456,7 +456,5 @@ Even though the code is neutral, the systems map onto the game’s thematic laye
 - **Pivotal points** → major decision moments / open-mindedness nodes.
 - **MazeEnd chasing start** → consequences, closure, or future states folding back on initial conditions.
 
-This overview should give new readers (including future you) a quick mental model of how MazeX is structured both technically and conceptually.
-
 
 
