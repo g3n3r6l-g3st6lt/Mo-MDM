@@ -215,4 +215,248 @@ I will use the maze generator from CodeBox as a template to generate a Blender p
 
 I intend to screen record the process of using Paper2D/ZD plugin on UE to assign my character sprites to movement controls and testing the result, and also generating the maze blocking after playing a couple of them on maze generator.
 
+# MazeX – Game & Code Overview
+
+Long time no see, here is the summation of my latest developments over the two months (along with my screen recordings).
+
+## High-Level Concept
+
+MazeX is a top-down maze exploration game where:
+
+- The **maze** represents a space of dilemmas and branching possibilities.
+- The **player** traverses this space using effortful movement (steps, turns).
+- **Teleporters** act as heuristics/biases that skip parts of the maze in non-obvious ways.
+- **Pivotal points** mark key decision junctions that invite reflection.
+- The **end** of the maze (**MazeEnd**) later **chases back to the start**, embodying consequences or closure catching up with the initial state.
+
+The project is implemented in C++ on Unreal Engine using a grid-based maze representation, modular spawning actors, and a custom HUD with a minimap.
+
+---
+
+## Core Systems
+
+### 1. Maze Generation & Data
+
+**Classes:**
+- `UMazeGrid`
+- `MazeTypes.h` (`FMazeCell`, `FMazePath`, `FMazeConfig`, enums)
+- `UMazeConfigData`
+
+**Responsibilities:**
+- Represent the maze as a 2D grid of `FMazeCell` instances with wall/connectivity data.
+- Support multiple generation algorithms (DFS/Prim-style), loop creation, connectivity repair, and detour injection.
+- Compute paths:
+  - BFS shortest path
+  - K-shortest paths (Yen-style)
+- Store reusable maze configurations in `UMazeConfigData` primary data assets (`FMazeConfig`).
+
+**Key Ideas:**
+- `FMazeCell` holds structural info (open sides, coordinates).
+- `FMazePath` holds cell coordinates and a cost.
+- `FMazeConfig` defines size, loop percentage, detour parameters, and seeding.
+- This layer is purely *logical* – no visuals.
+
+---
+
+### 2. Maze Actor & World Representation
+
+**Classes:**
+- `AMazeActor`
+
+**Responsibilities:**
+- Own a `UMazeGrid` instance and generate a concrete maze from configuration.
+- Build the in-world representation (floors, walls, special markers).
+- Spawn and position:
+  - `AMazeStart` (entrance)
+  - `AMazeEnd` (exit/chaser)
+  - `ATeleportIn` / `ATeleportOut`
+  - `APivotalPoint`
+
+**Randomization Features:**
+- `bRandomizeOnBeginPlay` – randomize on `BeginPlay`.
+- Row/column ranges.
+- Teleporter count ranges.
+- Entrance/exit side ranges.
+- `bUseRandomSeedEachPlay`, `RandomSeedMin/Max` for reproducible but varied runs.
+- Editor-only `PreviewRandomization()` button to test variations via `ApplyRandomization()` + `Rebuild()`.
+
+**Analysis Features:**
+- Computes and exposes stats like:
+  - Number of branches
+  - Number of available paths
+- Optionally ensures exit is on last generated cell (`bSnapExitToLastCell`).
+
+---
+
+### 3. Player, Input & Movement
+
+**Classes:**
+- `AMazeCharacter`
+- `AMazePlayerController`
+
+**Responsibilities:**
+
+**`AMazeCharacter`**
+- Inherits from `ACharacter`.
+- Top-down style camera via `USpringArmComponent` + `UCameraComponent`.
+- Handles physical movement through the maze.
+
+**`AMazePlayerController`**
+- Uses Enhanced Input:
+  - Actions for movement (e.g. `MoveForward`, `MoveRight`).
+  - Input mapping context.
+- Tracks:
+  - **Step count**
+  - **Turn count**
+- Exposes data to HUD (UI) for display.
+
+---
+
+### 4. Game Rules, Flow & States
+
+**Classes:**
+- `AMazeGameMode`
+- `AMazeStart`
+- `AMazeEnd`
+
+**Responsibilities:**
+
+**`AMazeGameMode`**
+- Sets:
+  - Default pawn: `AMazeCharacter`
+  - Player controller: `AMazePlayerController`
+- Tracks:
+  - `AMazeStart` / `AMazeEnd` references.
+  - `StartLocation`, `EndLocation`.
+  - `bHasFinished` (run completion state).
+  - `NumPathsAvailable` from analysis.
+- Core logic:
+  - `PlacePlayerAtStart()` – spawn/teleport player at start marker.
+  - `NotifyPlayerReachedGoal(AActor* ReachedActor)` – called when player reaches the end.
+  - `NotifyEndReachedStart()` – called when the end, during the chase, reaches the start location.
+  - `GetStartLocation()` – exposes start world position.
+- Time & chase:
+  - GameMode ticks and, on time expiration, triggers MazeEnd to **start chasing** the start point.
+  - Continues to drive MazeEnd’s chase behavior each Tick until resolved.
+
+**`AMazeStart`**
+- Marker actor for maze entrance.
+- Acts as an anchor for spawn position and minimap.
+
+**`AMazeEnd`**
+- Components:
+  - `Root` (scene root)
+  - `GoalTrigger` (`USphereComponent`) – overlap volume for detecting player.
+  - `MarkerMesh` (`UStaticMeshComponent`) – purely visual, now fully controlled by Blueprint / instance (no forced cube).
+- Overlap:
+  - On overlap with `AMazeCharacter`, calls `AMazeGameMode::NotifyPlayerReachedGoal(OtherActor)`.
+- Chase behavior:
+  - `bChasingStart` – whether MazeEnd is currently chasing the start.
+  - `StartChasingStart()` – enables chasing state.
+  - `TickChasing(float DeltaSeconds)` – moves towards GameMode’s start location at ~75% of player movement speed.
+  - On close proximity to start, calls `AMazeGameMode::NotifyEndReachedStart()` and stops.
+
+---
+
+### 5. Teleportation System
+
+**Classes:**
+- `ATeleportIn`
+- `ATeleportOut`
+
+**Responsibilities:**
+
+**`ATeleportIn`**
+- Visual mesh (non-colliding).
+- `UBoxComponent` trigger configured as an omnidirectional volume.
+- On trigger overlap with player:
+  - Selects a random `ATeleportOut` that:
+    - Belongs to the same `AMazeActor`.
+    - Is not too close (distance filter).
+  - If none are far enough:
+    - Falls back to any same-owner `ATeleportOut`.
+  - Teleports player to chosen TeleportOut position.
+
+**`ATeleportOut`**
+- Passive marker actor placed by `AMazeActor` as destination points.
+
+**Design Purpose:**
+- Represent heuristics / cognitive shortcuts:
+  - They move you non-linearly through the maze.
+  - They don’t guarantee progress in a simple sense (can land near or far).
+
+---
+
+### 6. Pivotal Points (Junction Markers)
+
+**Class:**
+- `APivotalPoint`
+
+**Responsibilities:**
+- Represent high-degree junctions: spawned at cells with **≥ 3 open sides**.
+- Components:
+  - `Root` (scene root)
+  - `Sphere` (`UStaticMeshComponent`) – visual mesh for the point.
+  - `Trigger` (`USphereComponent`) – overlap volume.
+- Visual settings:
+  - `SphereMesh`
+  - `EmissiveMaterial` + `GlowIntensity` (MID parameter)
+  - `ActivatedMaterial` for post-activation state.
+- Audio:
+  - `ActivateSound` played on activation.
+- State:
+  - `bActivated`, `bDisintegrating`, `DisintegrateTime`.
+- Behavior:
+  - `OnConstruction` configures visuals and glow (when allowed to).
+  - `OnTriggerBegin` handles activation, sound, and visual changes.
+
+**Design Purpose:**
+- Embody “pivotal” decision points in the maze where multiple paths are available.
+- Reinforce the theme of reflection, openness, and impactful choices.
+
+---
+
+### 7. HUD & Minimap
+
+**Class:**
+- `AMazeHUD`
+
+**Responsibilities:**
+- Overlay:
+  - Display steps, turns, and player status.
+  - Show progress towards the end.
+  - Freeze progress once `AMazeGameMode::GetHasFinished()` is true.
+- Minimap:
+  - Drawn top-right using Canvas.
+  - Filled background.
+  - Markers for:
+    - Player
+    - Start
+    - End
+    - TeleportIn locations
+    - MazeEnd (moving) during chase.
+  - Orientation controls:
+    - `MarkerRotationDeg`
+    - `bFlipMapHorizontally`
+    - `bFlipMapVertically`.
+
+**Design Purpose:**
+- Give a readable overview of the maze and its key elements without spoiling all structure.
+- Visually communicate the chase when MazeEnd starts moving.
+
+---
+
+## Thematic Mapping
+
+Even though the code is neutral, the systems map onto the game’s thematic layer:
+
+- **Maze** → moral / cognitive dilemma space.
+- **Player movement (steps/turns)** → effort and complexity of reasoning.
+- **Teleports** → heuristics/biases.
+- **Pivotal points** → major decision moments / open-mindedness nodes.
+- **MazeEnd chasing start** → consequences, closure, or future states folding back on initial conditions.
+
+This overview should give new readers (including future you) a quick mental model of how MazeX is structured both technically and conceptually.
+
+
 
