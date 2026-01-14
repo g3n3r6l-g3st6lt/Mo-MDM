@@ -458,3 +458,6 @@ Even though the code is neutral, the systems map onto the game’s thematic laye
 
 
 
+## Closing Prototype1.0
+
+So the above explanation + minimal journaling (the majority is available on my Discord scrub shows what this prototype truly was. I have been introduced into game-making and hit all the roadblocks that I think were natural to hit, as well as used some tools quite excessivelt to the point where I lost true connection to the making itself. If design is a form of translating thoughts into words, and words into materials, and materials into artefact...then I have been on autopilot, simply giving my thoughts and updates, and negotiating with some accessible material, while the true language of development, the programming, was almost completely left for LLMs without proper usage etiquette. The experience was kinda chaotic when it left the confines of what I know. That is expected, again borrowing from my currently developing linguistic translation model of materializing-analyzing design, if you do not have enough knowledge of or vocabulary of a language's structure, your modes of expressing through it, let alone translate to/from it, will be severely limited. 
