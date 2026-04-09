@@ -1,6 +1,6 @@
-### Prototype 2 (Godot):
+## Prototype 2 (Godot):
 
-## Phase 1 — Concept and Foundation
+### Phase 1 — Concept and Foundation
 
 - [x] Define core concept: moral parsimony as maze navigation
 - [x] Research moral foundations (Haidt, deontological/consequentialist traditions)
@@ -10,7 +10,7 @@
 - [x] Set up project structure (scripts, scenes, assets directories)
 - [x] Configure project.godot (autoloads, input mapping, display settings)
 
-## Phase 2 — Maze Generation
+### Phase 2 — Maze Generation
 
 - [x] Implement block-grid data model (0 = floor, 1 = wall, 2 = tagged wall)
 - [x] Implement room-to-block coordinate conversion
@@ -21,7 +21,7 @@
 - [x] Implement goal placement (farthest room from start...but not sure I know enough to do that)
 - [x] Parameterize generation with config dictionary (width, height, shortcut chance, thresholds)
 
-## Phase 3 — Rendering
+### Phase 3 — Rendering
 
 - [x] Implement isometric projection (grid position to screen coordinates)
 - [x] Draw floor tiles as diamond polygons for open cells, draw walls as isometric cubes (easy option, stripped down)
@@ -30,7 +30,7 @@
 - [x] Implement principle-drop wall flash (walls reappear in the dropped principle's color)
 - [x] Draw floors under tagged walls (visible when wall disappears)
 
-## Phase 4 — Player and Movement
+### Phase 4 — Player and Movement
 
 - [x] Implement grid-based movement (WASD, pretty standard)
 - [x] Implement move cooldown to prevent sliding (constraint movement)
@@ -40,7 +40,7 @@
 - [x] Implement threshold (the intersection markers) detection and drop flow (what happens when players drops a principle)
 - [x] Implement smooth-follow isometric camera (not very difficult from the tutorials I saw)
 
-## Phase 5 — Principle Abilities
+### Phase 5 — Principle Abilities
 
 - [x] Design six unique abilities tied to moral principles
 - [x] Implement charge system (spend/refill per principle) to add a sense of scarcity
@@ -54,7 +54,7 @@
 - [x] Register number keys 1-6 as ability activation inputs (sounds logical?)
 - [x] Implement ability failure feedback (no charges, no valid target)
 
-## Phase 6 — Threshold System
+### Phase 6 — Threshold System
 
 - [x] Implement threshold placement at intersection junctions (3+ open passages), did learn that from my Unreal prototype...I suppose will be easier here.
 - [x] Space thresholds evenly across distance tiers (trying to balance randomness with consistency)
@@ -62,7 +62,7 @@
 - [x] Remove used thresholds so they do not re-trigger
 - [x] Trigger maze visibility refresh after drop (if does not work maybe leave the threshold marker but deactivate it somehow)
 
-## Phase 7 — Level Progression
+### Phase 7 — Level Progression
 
 - [x] Define five level configurations (maze size, pick count, threshold count, shortcut density)
 - [x] Implement level reset (clear held principles, refill charges, reset thresholds)
@@ -70,7 +70,7 @@
 - [x] Implement level completion flow (goal reached, show end screen, next level button)
 - [x] Implement final level ending (reflection text, return to menu)
 
-## Phase 8 — UI
+### Phase 8 — UI
 
 - [x] Build main menu (title, subtitle, start button, tutorial button)
 - [x] Build tutorial screen (movement, principles, abilities, thresholds, levels)
@@ -83,7 +83,7 @@
 - [x] Build end screen (kept principles, dropped principles with loss messages)
 - [x] Build level transition (continue to next level / return to menu)
 
-## Phase 9 — Cuts and Simplification
+### Phase 9 — Cuts and Simplification
 
 - [x] Remove moral dilemma encounter system (text scenarios, encounter UI, encounter data)
 - [x] Remove encounter_system.gd, encounter_ui.gd, encounter.gd, encounter_response.gd, maze_cell.gd
