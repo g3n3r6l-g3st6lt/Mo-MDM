@@ -1,0 +1,4 @@
+res://scripts/core/game_state.gd
+res://scenes/main/main.tscn
+res://scripts/ui/main_menu.gd
+res://scripts/ui/end_screen.gd
